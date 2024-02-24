@@ -1,1 +1,19 @@
+name: HTML Validation
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Validate HTML
+        uses: madhavarshney/w3c-validation-action@v2
+        with:
+          path: path/to/your/html/files
